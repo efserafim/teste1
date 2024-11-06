@@ -1,72 +1,56 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liturgia Diária</title>
-</head>
-<body>
-    <header>
-        <h1>Liturgia do Dia</h1>
-    </header>
-    <main>
-        <section id="leitura-do-dia">
-            <h2>Leitura do Dia</h2>
-            <p id="leitura"></p>
-        </section>
-    </main>
-
-    <script>
-        async function fetchLeituraDoDia() {
-            try {
-                const corsProxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy
-                const apiUrl = "https://api-liturgia-diaria.vercel.app/"; // API Liturgia
-
-                // Fazer a requisição com CORS
-                const response = await fetch(corsProxyUrl + apiUrl, {
-                    method: 'GET',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'Origin': 'http://127.0.0.1:5500'  // Alterar para seu domínio se necessário
-                    }
-                });
-
-                // Transformando a resposta em JSON
-                const data = await response.json();
-
-                // Log para verificar a resposta da API
-                console.log(data); // Verifique no console os dados retornados pela API
-
-                // Acessando os dados corretos do objeto "today"
-                const today = data.today || {};
-
-                const date = today.date || "Data não disponível";
-                const title = today.entry_title || "Título não disponível";
-                const readings = today.readings || {};
-
-                // Mostrar o objeto de leituras no console para depuração
-                console.log("Leituras:", readings);
-
-                // Verificar se as leituras existem e são válidas
-                const firstReading = readings.first ? readings.first.texto : "Primeira leitura não disponível";
-                const secondReading = readings.second ? readings.second.texto : "Segunda leitura não disponível";
-
-                // Exibindo os dados no HTML
-                const leituraElement = document.getElementById("leitura");
-                leituraElement.innerHTML = `
-                    <strong>${date}</strong><br>
-                    <em>${title}</em><br><br>
-                    <strong>Primeira Leitura:</strong> ${firstReading}<br>
-                    <strong>Segunda Leitura:</strong> ${secondReading}
-                `;
-            } catch (error) {
-                console.error("Erro ao carregar a leitura do dia:", error);
-                document.getElementById("leitura").innerText = "Não foi possível carregar a leitura de hoje.";
-            }
-        }
-
-        // Chamando a função quando a página for carregada
-        document.addEventListener("DOMContentLoaded", fetchLeituraDoDia);
-    </script>
-</body>
-</html>
+   <!DOCTYPE html>
+   <html lang="pt-BR">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Liturgia Diária</title>
+   </head>
+   <body>
+       <header>
+           <h1>Liturgia do Dia</h1>
+       </header>
+       <main>
+           <section id="leitura-do-dia">
+               <h2>Leitura do Dia</h2>
+               <p id="leitura">Carregando...</p>
+           </section>
+       </main>
+ 
+       <script>
+           async function fetchLeituraDoDia() {
+               try {
+                   const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
+                   const apiUrl = "https://api-liturgia-diaria.vercel.app/";
+ 
+                   const response = await fetch(corsProxyUrl + apiUrl, {
+                       method: 'GET',
+                       headers: {
+                           'X-Requested-With': 'XMLHttpRequest',
+                           'Origin': 'http://127.0.0.1:5500'
+                       }
+                   });
+ 
+                   const data = await response.json();
+ 
+                   const { date, entry_title, readings } = data;
+ 
+                   const firstReading = readings.first ? readings.first.texto : "Primeira leitura não disponível";
+                   const secondReading = readings.second ? readings.second.texto : "Segunda leitura não disponível";
+ 
+                   const leituraElement = document.getElementById("leitura");
+                   leituraElement.innerHTML = `
+                       <strong>${date}</strong><br>
+                       <em>${entry_title}</em><br><br>
+                       <strong>Primeira Leitura:</strong> ${firstReading}<br>
+                       <strong>Segunda Leitura:</strong> ${secondReading}
+                   `;
+               } catch (error) {
+                   console.error("Erro ao carregar a leitura do dia:", error);
+                   document.getElementById("leitura").innerText = "Não foi possível carregar a leitura de hoje.";
+               }
+           }
+ 
+           document.addEventListener("DOMContentLoaded", fetchLeituraDoDia);
+       </script>
+   </body>
+   </html>
