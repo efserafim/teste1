@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./encenacao.css">
+    <title>Geração Eucarística</title>
+    <!-- Título da página -->
+    <meta property="og:title" content="Geração Eucarística">
+    <!-- Descrição da página -->
+    <meta property="og:description" content="Site oficial do Grupo Jovem Geração Eucarística.">
+    <!-- URL do site -->
+    <meta property="og:url" content="https://geracaoeucaristica.com.br/">
+    <!-- URL da imagem que será exibida -->
+    <meta property="og:image" content="https://i.pinimg.com/736x/8b/a9/cd/8ba9cd7ba555ded8623f8f7c0b8a5b90.jpg">
+    <!-- Tipo do conteúdo -->
+    <meta property="og:type" content="website">
+    <style>
+        .foto-grupo-section {
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #16213e, #0f3460);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .foto-grupo-section h2 {
+            font-size: 36px;
+            color: #e94560;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+         .slideshow-container {
+        position: relative;
+        max-width: 500px;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 15px;
+        }
+
+         .slide {
+                display: none;
+                width: 100%;
+            }
+
+            .active-slide {
+                display: block;
+            }
+
+            .foto-grupo {
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
+                border: 5px solid #e94560;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .foto-grupo:hover {
+                transform: scale(1.05);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: auto;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                user-select: none;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 3px;
+            }
+
+            .next {
+                right: 10px;
+            }
+
+            .prev {
+                left: 10px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        .text-below {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background-color: #0f3460;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .highlight {
+            color: #e94560;
+            font-weight: bold;
+        }
+
+        .map-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #e94560;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../logo/Logo Branca.png" alt="Logo Retiro">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li><a href="../index.html" class="menu-link">
+                        <img src="../menu-icon/inicio.png" alt="Início"> Início
+                    </a></li>
+                    <li><a href="../evangelho.html" class="menu-link">
+                        <img src="../menu-icon/liturgia diaria.png" alt="Liturgia Diária"> Liturgia Diária
+                    </a></li>
+                    <li><a href="../sobre.html" class="menu-link">
+                        <img src="../menu-icon/sobre nos.png" alt="Sobre Nós"> Sobre Nós
+                    </a></li>
+                    <li><a href="../paroquia.html" class="menu-link">
+                        <img src="../menu-icon/paroquia.png" alt="Paróquia"> Paróquia
+                    </a></li>
+                    <li><a href="https://www.instagram.com/paroquiasantoantonio.bacaxa/" class="menu-link">
+                        <img src="../menu-icon/megafone.png" alt="Sobre Nós"> Pascom
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="cta-button">
+                <a href="https://www.instagram.com/geracao.eucaristica/" target="_blank" rel="noopener noreferrer">
+                    <img src="../icon/instagram.png" alt="Instagram" class="instagram-icon">
+                    Siga-nos
+                </a>
+            </button>
+            <button class="hamburger-btn" aria-label="Abrir menu">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção da Foto do Grupo -->
+        <section class="foto-grupo-section">
+            <div class="container">
+                <h2>Encenação da Paixão de Cristo 2025</h2>
+                <div class="slideshow-container">
+                    <div class="slide active-slide">
+                        <img src="../fotos  cards/paixao 1.jpeg" alt="Foto do Grupo Jovem" class="foto-grupo">
+                    </div>
+                    <div class="slide">
+                        <img src="../fotos  cards/paixao 2.jpeg" alt="Foto do Grupo Jovem" class="foto-grupo">
+                    </div>
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+                <div class="text-below">
+                    <p><span class="highlight">Fala, Jovens!</span> É com grande alegria que anunciamos o retorno da nossa <span class="highlight">Tradicional Encenação da Paixão de Cristo</span>, organizada pelo <span class="highlight">Grupo Jovem Geração Eucarística</span>. Este evento vai além de uma apresentação teatral; é uma profunda meditação sobre o mistério da cruz, onde Jesus, com infinito amor, se entregou por nós.</p>
+                    <p>Convidamos você a vivenciar conosco este momento de fé e reflexão. A encenação ocorrerá em frente à Igreja Matriz de Santo Antônio, localizada na <span class="highlight">Praça Santo Antônio, s/n - Bacaxá, Saquarema - RJ, 28993-000</span>, no dia <span class="highlight">18/04 (Sexta-Feira Santa) às 20h</span>. Venha e permita-se ser tocado pela grandeza deste sacrifício, que nos chama à conversão e ao amor verdadeiro.</p>
+                    <p>Este é um convite para não apenas assistir, mas para <span class="highlight">viver</span> e <span class="highlight">meditar</span> sobre o mistério da redenção, que nos ensina sobre esperança e ressurreição. Que este momento seja uma oportunidade de nos inspirarmos a mudança e a conversão.</p>
+                    <p>Para saber o local exato da encenação, <a href="https://www.google.com/maps/place/Par%C3%B3quia+Santo+Ant%C3%B4nio/@-22.8938306,-42.4706284,17z/data=!3m1!4b1!4m6!3m5!1s0x975d9a05169035:0x51b7d47c85fa8811!8m2!3d-22.8938356!4d-42.4680535!16s%2Fg%2F1w0h8qsb?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">clique aqui <img src="https://cdn-icons-png.flaticon.com/512/3037/3037935.png" alt="Ícone de Localização" class="map-icon"></a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 <b>PARÓQUIA SANTO ANTÔNIO - SAQUAREMA/RJ</b> • Grupo Jovem Geração Eucarística. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <a href="https://chat.whatsapp.com/GW4XWNOKzIPLmZEjIwWWMD" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <div class="whatsapp-bubble">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+            WhatsApp
+        </div>
+    </a>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
